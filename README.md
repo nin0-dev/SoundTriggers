@@ -16,6 +16,8 @@ This plugin triggers a sound when you send a message containing certain strings.
 2. Add the plugin to your plugin directory.
 3. Ensure all dependencies are installed.
 
+https://discord.com/channels/1015060230222131221/1257038407503446176
+
 ## Usage
 
 Once installed, the plugin will automatically trigger sounds when certain strings are detected in messages. By default, the plugin comes with the following triggers:
