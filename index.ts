@@ -1,6 +1,12 @@
-import definePlugin, { OptionType } from "@utils/types";
+/*
+ * Vencord, a Discord client mod
+ * Copyright (c) 2025 Vendicated and contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 import { definePluginSettings } from "@api/Settings";
 import { sleep } from "@utils/misc";
+import definePlugin, { OptionType } from "@utils/types";
 import { RelationshipStore, SelectedChannelStore } from "@webpack/common";
 import { Message } from "discord-types/general";
 
@@ -24,11 +30,11 @@ function reloadTriggers() {
         return;
     }
 
-    const customTriggers: { match: string; link: string }[] = [];
+    const customTriggers: { match: string; link: string; }[] = [];
     const lines = customTriggersString
         .split(",")
-        .map((line) => line.trim())
-        .filter((line) => line.length > 0);
+        .map(line => line.trim())
+        .filter(line => line.length > 0);
 
     for (const line of lines) {
         const parts = line.split(":");
@@ -67,7 +73,7 @@ function play(link: string, volume: number) {
     const audioElement = document.createElement("audio");
     audioElement.src = link;
     audioElement.volume = volume / 100;
-    audioElement.play().catch((error) => {
+    audioElement.play().catch(error => {
         console.error(`Failed to play sound: ${error.message}`);
     });
     audioElement.onended = () => {
